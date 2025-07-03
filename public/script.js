@@ -1,6 +1,5 @@
 // public/script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // A captura dos elementos continua a mesma...
     const generateBtn = document.getElementById('generate-btn');
     const carInfoInput = document.getElementById('car-info-input');
     const loader = document.getElementById('loader');
@@ -25,15 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ info_carro: infoCarro }),
             });
             
-            if (!response.ok) {
-                throw new Error('Falha na resposta do servidor.');
-            }
-
-            // ---->  CORREÇÃO AQUI  <----
-            // Agora o response.json() funciona, pois o back-end envia um JSON puro.
+            // Pega o corpo da resposta como JSON
             const data = await response.json();
+
+            // Se a resposta não for OK (ex: erro 400 ou 500), o 'data' conterá a mensagem de erro.
+            if (!response.ok) {
+                // Usa a mensagem de erro vinda do servidor, se existir.
+                throw new Error(data.error || 'Falha na resposta do servidor.');
+            }
             
-            // Não precisamos mais limpar nada aqui, usamos os dados diretamente!
+            // ----> CORREÇÃO IMPORTANTE AQUI <----
+            // Acessa as propriedades corretas do objeto 'data'
             marketplaceOutput.textContent = data.marketplace;
             socialMediaOutput.textContent = data.redes_sociais;
 
@@ -42,12 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             loader.style.display = 'none';
-            alert(`Ocorreu um erro: ${error.message}`);
+            // Mostra o erro de forma mais clara para o usuário
+            alert(`Ocorreu um erro ao gerar a descrição: ${error.message}`);
             console.error('Erro ao chamar a função proxy:', error);
         }
     });
     
-    // A função de copiar continua a mesma...
+    // A função de copiar texto continua a mesma
     document.querySelectorAll('.copy-btn').forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.dataset.target;

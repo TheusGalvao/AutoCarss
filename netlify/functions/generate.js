@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
       };
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     // 5. O prompt final e refinado que instrui a IA
     const prompt = `

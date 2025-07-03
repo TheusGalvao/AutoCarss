@@ -1,5 +1,6 @@
 // public/script.js
 document.addEventListener('DOMContentLoaded', () => {
+    // A captura dos elementos continua a mesma...
     const generateBtn = document.getElementById('generate-btn');
     const carInfoInput = document.getElementById('car-info-input');
     const loader = document.getElementById('loader');
@@ -18,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsArea.style.display = 'none';
 
         try {
-            // A chamada agora é para o nosso proxy seguro, não para a API do Gemini!
-            // O caminho '/.netlify/functions/generate' é um endereço mágico do Netlify.
             const response = await fetch('/.netlify/functions/generate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -30,14 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Falha na resposta do servidor.');
             }
 
+            // ---->  CORREÇÃO AQUI  <----
+            // Agora o response.json() funciona, pois o back-end envia um JSON puro.
             const data = await response.json();
             
-            // Limpa a resposta (a IA pode retornar ```json)
-            const cleanedMarketplace = data.marketplace.replace(/```json\n?|\n?```/g, '').trim();
-            const cleanedSocial = data.redes_sociais.replace(/```json\n?|\n?```/g, '').trim();
-
-            marketplaceOutput.textContent = cleanedMarketplace;
-            socialMediaOutput.textContent = cleanedSocial;
+            // Não precisamos mais limpar nada aqui, usamos os dados diretamente!
+            marketplaceOutput.textContent = data.marketplace;
+            socialMediaOutput.textContent = data.redes_sociais;
 
             loader.style.display = 'none';
             resultsArea.style.display = 'block';
@@ -49,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // A função de copiar texto continua a mesma
+    // A função de copiar continua a mesma...
     document.querySelectorAll('.copy-btn').forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.dataset.target;

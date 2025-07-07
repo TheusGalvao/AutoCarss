@@ -16,9 +16,46 @@
 
             <h1>Gerador de Anúncios 🚗✨</h1>
             <p>Cole as informações do veículo abaixo e clique em gerar para criar os textos de venda.<br>
-            (Version 1.1)</p>
-        </header>
+            (Version 1.1.1)</p>
+            
+            <!-- Botão para abrir a janelinha -->
+            <button id="toggle-example-btn">📋 Ver Exemplo</button>
 
+            <!-- Mini janelinha com texto modelo -->
+            <div id="example-box" style="display: none; border: 1px solid #ccc; background: #f9f9f9; padding: 10px; margin-top: 10px; border-radius: 6px;">
+                <strong>Exemplo:</strong><br>
+                [Marca] [Modelo] [Ano] - [Versão] [Motor]
+
+                Detalhes do Veículo:
+                - Marca: 
+                - Modelo: 
+                - Ano: 
+                - Versão: 
+                - Cor: 
+                - Combustível: 
+                - Quilometragem: 
+                - Câmbio: 
+                - Motorização: 
+                - Número de Portas: x portas
+                - Final da Placa: 
+                
+                Características e Equipamentos:
+                - Ar-condicionado: S/N
+                - Direção: Elétrica/Hidráulica
+                - Vidros Elétricos: S/N
+                - Travas Elétricas: S/N
+                - Retrovisores Elétricos: S/N
+                - Bancos em Couro: S/N
+                - Central Multimídia: S/N
+                - Sensores de Estacionamento: S/N
+                - Câmera de Ré: S/N
+                - Rodas de Liga Leve: S/N
+                - Faróis de Neblina: S/N
+                - Airbags: S/N
+                - Freios ABS: S/N
+                
+            </div>
+        </header>
         <main>
             <div class="input-area">
                 <textarea id="car-info-input" rows="6" placeholder="Ex: Chevrolet Onix LT 1.0 2020, branco, flex, 45.000km, câmbio manual, completo com ar, direção elétrica, vidros e travas. Placa final 3. Único dono."></textarea>
@@ -50,5 +87,20 @@
     </div>
 
     <script src="script-gerador.js"></script>
+    <script>
+    const toggleBtn = document.getElementById('toggle-example-btn');
+    const exampleBox = document.getElementById('example-box');
+
+    toggleBtn.addEventListener('click', () => {
+        if (exampleBox.style.display === 'none') {
+            exampleBox.style.display = 'block';
+            toggleBtn.textContent = '❌ Fechar Exemplo';
+        } else {
+            exampleBox.style.display = 'none';
+            toggleBtn.textContent = '📋 Ver Exemplo';
+        }
+    });
+</script>
+
 </body>
 </html>

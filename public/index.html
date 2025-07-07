@@ -3,48 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Anúncios</title>
-    
+    <title>Plataforma de Ferramentas IA - Guaru Prime</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Gerador de Anúncios 🚗✨</h1>
-            <p>Cole as informações do veículo abaixo e clique em gerar para criar os textos de venda.<br>
-            (ver. 1.0)</p>
+        <header class="dashboard-header">
+            <h1>Plataforma de Ferramentas IA 🚀</h1>
+            <p>Sua central de automação para a Guaru Prime. Escolha uma ferramenta abaixo para começar.</p>
         </header>
 
-        <main>
-            <div class="input-area">
-                <textarea id="car-info-input" rows="6" placeholder="Ex: Chevrolet Onix LT 1.0 2020, branco, flex, 45.000km, câmbio manual, completo com ar, direção elétrica, vidros e travas. Placa final 3. Único dono."></textarea>
-                <button id="generate-btn">Gerar Descrições</button>
-            </div>
+        <main class="tools-grid">
+            
+            <a href="/gerador-de-descricao" class="tool-card">
+                <div class="tool-icon">📝</div>
+                <h2>Gerador de Descrições</h2>
+                <p>Crie textos de anúncio otimizados para Marketplace e Redes Sociais em segundos.</p>
+            </a>
 
-            <div id="loader" class="loader" style="display: none;">
-                Gerando textos com a IA... Por favor, aguarde.
-            </div>
+            <a href="#" class="tool-card disabled">
+                <div class="tool-icon">🖼️</div>
+                <h2>Editor de Imagens</h2>
+                <p>Remova fundos e melhore a qualidade das fotos dos veículos (Em breve).</p>
+            </a>
 
-            <div id="results-area" class="results-area" style="display: none;">
-                <div class="result-box">
-                    <div class="result-header">
-                        <h2>Descrição para MarketPlace</h2>
-                        <button class="copy-btn" data-target="marketplace-output">Copiar Texto</button>
-                    </div>
-                    <pre id="marketplace-output"></pre>
-                </div>
+            <a href="#" class="tool-card disabled">
+                <div class="tool-icon">💬</div>
+                <h2>Assistente de Respostas</h2>
+                <p>Gere respostas rápidas e profissionais para clientes no WhatsApp (Em breve).</p>
+            </a>
 
-                <div class="result-box">
-                    <div class="result-header">
-                        <h2>Descrição para Redes Sociais</h2>
-                        <button class="copy-btn" data-target="social-media-output">Copiar Texto</button>
-                    </div>
-                    <pre id="social-media-output"></pre>
-                </div>
-            </div>
-        </main>
+            </main>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

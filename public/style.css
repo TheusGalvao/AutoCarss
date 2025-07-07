@@ -132,3 +132,42 @@ pre {
     line-height: 1.6;
     color: #333;
 }
+
+/* Estilos gerais e importação da fonte (como antes) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+body { font-family: 'Roboto', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+.container { width: 100%; max-width: 900px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px M12px rgba(0, 0, 0, 0.1); padding: 30px; }
+header { text-align: center; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px; margin-bottom: 30px; }
+header h1 { color: #0056b3; margin: 0; }
+
+/* === NOVOS ESTILOS PARA A PLATAFORMA === */
+
+/* Estilo do cabeçalho do dashboard */
+.dashboard-header { border-bottom: none; }
+
+/* Grid para os cartões de ferramentas */
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+/* Estilo individual de cada cartão de ferramenta */
+.tool-card {
+    display: block;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tool-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); }
+.tool-card.disabled { opacity: 0.5; cursor: not-allowed; }
+.tool-card.disabled:hover { transform: none; box-shadow: none; }
+.tool-card .tool-icon { font-size: 40px; margin-bottom: 15px; }
+.tool-card h2 { font-size: 1.2em; margin: 0 0 10px 0; color: #0056b3; }
+.tool-card p { font-size: 0.9em; line-height: 1.5; margin: 0; }
+
+/* Navegação para voltar na página da ferramenta */
+.tool-nav { text-align: left; margin-bottom: 20px; }
+.tool-nav a { text-decoration: none; color: #007bff; font-weight: 500; }
+.tool-nav a:hover { text-decoration: underline; }

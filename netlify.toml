@@ -1,0 +1,23 @@
+# Arquivo de configuração do Netlify
+
+# Define as configurações de build.
+# 'public' é a pasta que contém nosso site.
+# 'netlify/functions' é onde moram nossos back-ends.
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# Regras de redirecionamento que agem como um roteador.
+# Isso transforma a experiência de um site estático na de uma aplicação web.
+[[redirects]]
+  # Quando o usuário acessar a URL amigável '/gerador-de-descricao'...
+  from = "/gerador-de-descricao"
+  # ...o Netlify vai, internamente, servir o arquivo 'gerador.html'.
+  to = "/gerador.html"
+  # O status 200 faz com que a URL no navegador não mude. É uma reescrita, não um redirecionamento.
+  status = 200
+
+# [[redirects]]
+#   from = "/editor-de-imagem"  # <-- Futuramente, você adicionará a regra para sua próxima ferramenta aqui
+#   to = "/editor.html"
+#   status = 200

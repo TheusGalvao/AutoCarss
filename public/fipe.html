@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegador Tabela FIPE - Plataforma IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="tool-nav">
+                <a href="/">&larr; Voltar para a Plataforma</a>
+            </nav>
+            <h1>Navegador Tabela FIPE 🚘</h1>
+            <p>Selecione a marca, modelo e ano para ver o valor atualizado do veículo.</p>
+        </header>
+
+        <main>
+            <div class="fipe-selectors">
+                <select id="brand-select" class="fipe-select">
+                    <option value="">1. Selecione a Marca</option>
+                </select>
+
+                <select id="model-select" class="fipe-select" disabled>
+                    <option value="">2. Selecione o Modelo</option>
+                </select>
+
+                <select id="year-select" class="fipe-select" disabled>
+                    <option value="">3. Selecione o Ano</option>
+                </select>
+            </div>
+
+            <div id="loader" class="loader" style="display: none;">
+                Carregando...
+            </div>
+
+            <div id="results-area" class="fipe-results" style="display: none;">
+                <h2 id="vehicle-model"></h2>
+                <ul>
+                    <li><strong>Valor FIPE:</strong> <span id="vehicle-fipe-price" class="fipe-price-highlight"></span></li>
+                    <li><strong>Mês de Referência:</strong> <span id="vehicle-fipe-month"></span></li>
+                    <li><strong>Código FIPE:</strong> <span id="vehicle-fipe-code"></span></li>
+                    <li><strong>Combustível:</strong> <span id="vehicle-fuel"></span></li>
+                </ul>
+            </div>
+
+            <div id="error-area" class="error-box" style="display: none;"></div>
+        </main>
+    </div>
+    <script src="script-fipe.js"></script>
+</body>
+</html>

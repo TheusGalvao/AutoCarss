@@ -9,12 +9,22 @@
 
 # Regras de redirecionamento que agem como um roteador.
 # Isso transforma a experiência de um site estático na de uma aplicação web.
+
+# Regra para a ferramenta "Gerador de Descrição"
 [[redirects]]
   # Quando o usuário acessar a URL amigável '/gerador-de-descricao'...
   from = "/gerador-de-descricao"
   # ...o Netlify vai, internamente, servir o arquivo 'gerador.html'.
   to = "/gerador.html"
-  # O status 200 faz com que a URL no navegador não mude. É uma reescrita, não um redirecionamento.
+  # O status 200 faz com que a URL no navegador não mude. É uma reescrita.
+  status = 200
+
+# NOVA REGRA ADICIONADA PARA A FERRAMENTA FIPE
+[[redirects]]
+  # Quando o usuário acessar a URL amigável '/consulta-fipe'...
+  from = "/consulta-fipe"
+  # ...o Netlify vai servir o arquivo 'fipe.html'.
+  to = "/fipe.html"
   status = 200
 
 # [[redirects]]

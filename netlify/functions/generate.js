@@ -35,9 +35,8 @@ exports.handler = async function (event, context) {
       **Diretrizes Essenciais:**
       1.  **Factual vs. Criativo:** Seja estritamente factual ao preencher os campos de dados ([Ano], [Cor], etc.). Sua criatividade deve ser usada APENAS para a [Breve descrição chamativa] e a [Frase final de reforço] no modelo Marketplace.
       2.  **Inferência:** Para o modelo de Redes Sociais, deduza o [tipo de carro] (como Hatch, Sedan, SUV, Picape) com base no nome do modelo do veículo.
-      3.  **Dados Ausentes:** Se uma informação específica não for fornecida no texto do usuário, preencha o campo correspondente com vazio.
-      4.  **Em "Principais Equipamentos, inclua somente os itens marcados no texto enviado para você.
-      5.  **Formato de Saída:** Sua resposta final deve ser um objeto JSON puro e válido, começando com "{" e terminando com "}". NÃO inclua nenhuma formatação extra, como blocos de código markdown (\`\`\`json ou \`\`\`).
+      3.  **Dados Ausentes:** Se uma informação específica não for fornecida no texto do usuário, preencha o campo correspondente com a frase "[não informado]".
+      4.  **Formato de Saída:** Sua resposta final deve ser um objeto JSON puro e válido, começando com "{" e terminando com "}". NÃO inclua nenhuma formatação extra, como blocos de código markdown (\`\`\`json ou \`\`\`).
 
       **Informações do carro fornecidas pelo usuário:**
       ---

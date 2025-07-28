@@ -75,6 +75,9 @@ exports.handler = async function (event, context) {
       Faróis de neblina
       Airbags
       Freios ABS
+      Trava de portas no painel
+      Abertura interna de porta malas
+      Android Auto
 
       [Frase final de reforço. Ex: Veículo em ótimo estado de conservação, ideal para quem busca economia, conforto e segurança.]
       ---
@@ -103,6 +106,9 @@ exports.handler = async function (event, context) {
       ✔ Airbags
       ✔ Freios ABS
       ✔ Rodas de Liga Leve
+      ✔ Trava de portas no painel
+      ✔ Abertura interna de porta malas
+      ✔ Android Auto
 
       Também aceitamos carros na troca 🚗
       Agende sua visita agora! 🏃‍♂️

@@ -117,7 +117,7 @@ exports.handler = async function (event, context) {
 
       Mais informações no link da nossa bio 🔥
 
-      #guaruprime #carros #guarulhos #autoshoppinginternacional #multimarcas #seucarronovo #carrobarato #[marca] #[modelo] #[versao] #fotosdecarros
+      #carros #guarulhos #cars #carro #oportunidade #aplicativo #uber #99 #[marca] 
       ---
       
       Agora, gere a resposta em formato JSON com as chaves "marketplace" e "redes_sociais".
@@ -143,3 +143,4 @@ exports.handler = async function (event, context) {
     };
   }
 };
+
